@@ -1,0 +1,57 @@
+   /* Background */
+   body {
+    background-color: #FBF8CC;
+    font-family: Arial, sans-serif;
+}
+
+/* Card Styling */
+.card {
+    width: 300px;
+    border-radius: 15px;
+    background-color: #CFBAF0;
+}
+
+/* Heading */
+h2 {
+    font-weight: bold;
+    color: #181d1f;
+}
+
+/* Input Fields */
+.form-control {
+    border-radius: 8px;
+    border: 1px solid #B9FBC0;
+    background-color: #FDE4CF;
+    color: black;
+}
+
+.form-control:focus {
+    border-color: #FFCFD2;
+    box-shadow: 0 0 5px #FFCFD2;
+}
+
+/* Login Button */
+.btn-login {
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    padding: 12px;
+    background-color: #98F5E1;
+    color: black;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-login:hover {
+    background-color: #B9FBC0;
+}
+
+/* Register Link */
+.register-link {
+    color: #26292e;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.register-link:hover {
+    color: #90DBF4;
+}

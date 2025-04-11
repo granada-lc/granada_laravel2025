@@ -1,0 +1,68 @@
+  /* Background and Font */
+  body {
+    background-color: #FBF8CC;
+    font-family: Arial, sans-serif;
+}
+
+/* Card Styling */
+.container {
+    max-width: 500px;
+}
+
+.card {
+    border-radius: 15px;
+    background-color: #F1C0E8;
+}
+
+/* Heading */
+h2 {
+    font-weight: bold;
+    color: #A3C4F3;
+}
+
+/* Buttons */
+.btn {
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    padding: 12px;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-upload {
+    background-color: #FDE4CF;
+    color: black;
+}
+
+.btn-edit {
+    background-color: #FFCFD2;
+    color: black;
+}
+
+.btn-users {
+    background-color: #90DBF4;
+    color: black;
+}
+
+.btn-logout {
+    background-color: #98F5E1;
+    color: black;
+}
+
+/* Hover Effects */
+.btn-upload:hover {
+    background-color: #F1C0E8;
+}
+
+.btn-edit:hover {
+    background-color: #CFBAF0;
+}
+
+.btn-users:hover {
+    background-color: #8EECF5;
+}
+
+.btn-logout:hover {
+    background-color: #B9FBC0;
+}
