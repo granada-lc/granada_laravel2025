@@ -1,48 +1,80 @@
+/* Full Page Styling */
 body {
     background-color: #FBF8CC;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
 }
 
+/* Register Container */
 .register-container {
     background-color: #CFBAF0;
-    width: 400px;
-    border-radius: 10px;
+    width: 750px; /* increased from 340px */
+    border-radius: 12px;
+    padding: 35px 30px; /* increased padding */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
 }
 
+
+/* Heading */
 h2 {
     color: #131516;
+    text-align: center;
+    margin-bottom: 25px;
 }
 
-.form-control, .form-check-input {
+/* Input Fields & Checkbox */
+.form-control,
+.form-check-input {
     background-color: #F1C0E8;
     border: none;
     color: black;
+    margin-bottom: 15px;
+    padding: 10px;
+    width: 100%;
+    border-radius: 5px;
+    font-size: 14px;
 }
 
+.form-control:focus,
+.form-check-input:focus {
+    outline: none;
+    box-shadow: 0 0 5px #F1C0E8;
+}
+
+/* Button */
 .btn {
-    background-color: #8EECF5;
+    background-color: #98F5E1 !important;
     color: white;
-    padding: 10px;
+    padding: 12px 24px;
     border-radius: 5px;
     border: none;
+    font-weight: bold;
+    font-size: 15px;
+    transition: background-color 0.3s ease-in-out;
+    margin-top: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .btn:hover {
-    background-color: #98F5E1;
+    background-color: #F1C0E8 !important;
 }
 
+/* Link Styling */
 a {
     color: #16181a;
     text-decoration: none;
+    font-size: 14px;
 }
 
-a:hover {
-    color: #90DBF4;
-}
 
+/* Checkbox Label */
 .form-check-label {
     font-size: 0.9rem;
+    color: #131516;
 }

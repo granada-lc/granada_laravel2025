@@ -1,23 +1,29 @@
-  /* Background and Font */
-  body {
-    background-color: #FBF8CC;
+/* Background and Font */
+body {
+    background-color: #FBF8CC !important ;
     font-family: Arial, sans-serif;
 }
 
-/* Card Styling */
+/* Container Styling */
 .container {
     max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
+/* Card Styling */
 .card {
     border-radius: 15px;
-    background-color: #F1C0E8;
+    background-color: #Fde4cf !important;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Heading */
 h2 {
     font-weight: bold;
-    color: #A3C4F3;
+    color: #A3C4F3 !important;
+    text-align: center;
 }
 
 /* Buttons */
@@ -25,44 +31,48 @@ h2 {
     font-size: 16px;
     font-weight: bold;
     border-radius: 8px;
-    padding: 12px;
+    padding: 12px 20px;
     text-align: center;
     transition: all 0.3s ease-in-out;
+    border: none;
+    cursor: pointer;
+    margin: 5px;
 }
 
+/* Button Variants */
 .btn-upload {
-    background-color: #FDE4CF;
+    background-color: #B9FBC0 !important ;
     color: black;
 }
 
 .btn-edit {
-    background-color: #FFCFD2;
+    background-color: #B9FBC0 !important ;
     color: black;
 }
 
 .btn-users {
-    background-color: #90DBF4;
+    background-color: #B9FBC0 !important;
     color: black;
 }
 
 .btn-logout {
-    background-color: #98F5E1;
+    background-color: #ed2a2e !important;
     color: black;
 }
 
 /* Hover Effects */
 .btn-upload:hover {
-    background-color: #F1C0E8;
+    background-color: #8EECF5  !important;
 }
 
 .btn-edit:hover {
-    background-color: #CFBAF0;
+    background-color: #8EECF5  !important;
 }
 
 .btn-users:hover {
-    background-color: #8EECF5;
+    background-color: #8EECF5 !important ;
 }
 
 .btn-logout:hover {
-    background-color: #B9FBC0;
+    background-color: #B9FBC0 !important;
 }

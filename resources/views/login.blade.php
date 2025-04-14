@@ -5,18 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Login</title>
-    <link rel="stylesheet" href="{{asset (path: 'css/login.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/login.css') }}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
 </head>
 <body>
 
     <div class="container d-flex justify-content-center align-items-center vh-100">
-        <div class="card p-4 shadow-lg">
+        <div class="card p-4 shadow-lg" style="min-width: 350px;">
             <h2 class="text-center">Login</h2>
-            
-    
+
+            {{-- Error Message --}}
+            @if(session('error'))
+                <div class="alert alert-danger text-center">
+                    {{ session('error') }}
+                </div>
+            @endif
+
             <form method="POST" action="{{ route('login') }}">
-          
+                @csrf
                 <div class="mb-3">
                     <input type="email" name="email" class="form-control" required placeholder="Email">
                 </div>
@@ -25,7 +31,7 @@
                 </div>
                 <button type="submit" class="btn btn-login w-100">Login</button>
             </form>
-            
+
             <div class="text-center mt-3">
                 <a href="{{ route('registration') }}" class="register-link">Register</a>
             </div>

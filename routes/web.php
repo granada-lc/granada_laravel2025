@@ -1,37 +1,44 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\Request;
+use Illuminate\Http\Request; 
 
-Route:: get('/dashboard', function (){
-   return view('dashboard');
-}) -> name ('dashboard');
-
-
-Route::get ('/login', function () {
-  return view ('login');
-}) -> name('login');
-
-
-Route::post('/login', function (\Illuminate\Http\Request $request){
-   $email = 'erven@gmail.com';
-   $password = '123';
-
-   if ($request -> email === $email && $request -> password === $password){
-    return redirect() -> route ('dashboard');
-   } else {
-       return back() -> with('error', 'Invalid credentials');
-
-   }
-
+Route::get('/', function () {
+    return view('welcome');
 });
 
-Route::get('/registration', function(){
+// Login View Route
+Route::get('/login', function () {
+     return view('login');
+  })->name('login');
+
+// Login Submission Route
+Route::post('/login', function (Request $request) {
+    $email = 'erven@gmail.com';
+    $password = '123';
+
+    if ($request->input('email') === $email && $request->input('password') === $password) {
+        return redirect()->route('dashboard');
+    } else {
+        return back()->with('error', 'Invalid credentials');
+    }
+        })->name('login');
+
+// Dashboard Route
+Route::get('/dashboard', function () {
+        return view('dashboard'); 
+   })->name('dashboard'); 
+
+
+/// Show the registration form
+Route::get('/registration', function () {
    return view('registration');
-}) -> name('registration');
+})->name('registration');
 
-Route::post('/registration', function (\Illuminate\Http\Request $request) {
-   $data = $request -> except('password');
-   return view ('register_success', compact('data'));
+// Handle submitted data from the form
+Route::post('/registration', function (Request $request) {
+   // Exclude 'password' and 'agree' from the displayed data
+   $data = $request->except(['password', 'agree']);
 
-});
+   return view('registration_success', compact('data'));
+})->name('registration.submit');
