@@ -13,7 +13,7 @@
         <h2 class="text-center">Register</h2>
 
         <!-- Laravel Form -->
-        <form method="POST" action="{{ route('registration.submit') }}">
+        <form method="POST" action="{{ route('registration.save') }}">
            @csrf
 
             <div class="mb-3">

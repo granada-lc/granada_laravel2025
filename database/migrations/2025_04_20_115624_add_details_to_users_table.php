@@ -11,13 +11,18 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->string('first_name')->after('id');
-            $table->string('last_name')->after('first_name');
-            $table->enum('sex', ['Male', 'Female'])->after('last_name');
-            $table->date('birthday')->after('sex');
-            $table->string('username')->unique()->after('birthday');
-            $table->string('user_type')->default('Customer')->after('email');
+        Schema::create('usersinfo', function(Blueprint $table){
+            $table->uuid('id')->primary(); 
+            $table->string('first_name');
+            $table->string('last_name');
+            $table->enum('sex', ['Male', 'Female']);
+            $table->date('birthday');
+            $table->string('username')->unique();
+            $table->string('email')->unique();
+            $table->string('password'); 
+            $table->boolean('agreed_to_terms')->default(false);
+            $table->enum('user_type', ['Admin', 'Customer'])->default('Customer');
+            $table->timestamps(); 
         });
     }
 
@@ -26,8 +31,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn(['first_name', 'last_name', 'sex', 'birthday', 'username', 'user_type']);
-        });
+        //
+        Schema::dropIfExists('usersinfo');
     }
 };

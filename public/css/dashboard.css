@@ -1,78 +1,63 @@
-/* Background and Font */
+
+
 body {
-    background-color: #FBF8CC !important ;
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #FBF8CC !important;
 }
 
-/* Container Styling */
-.container {
-    max-width: 500px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-/* Card Styling */
 .card {
-    border-radius: 15px;
-    background-color: #Fde4cf !important;
-    padding: 20px;
+    max-width: 1000px;
+    background-color: #FFCFD2 !important;
+    margin: 0 auto;
+}
+
+.button-sidebar {
+    width: 200px; /* Width of the sidebar for buttons */
+    background-color: #f8f9fa !important;
+    padding: 15px;
+    border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Heading */
-h2 {
-    font-weight: bold;
-    color: #A3C4F3 !important;
-    text-align: center;
-}
-
-/* Buttons */
-.btn {
+.button-sidebar a, .button-sidebar button {
+    width: 100%;
     font-size: 16px;
-    font-weight: bold;
+    font-weight: 500;
+    padding: 10px;
     border-radius: 8px;
-    padding: 12px 20px;
+    margin-bottom: 10px;
     text-align: center;
-    transition: all 0.3s ease-in-out;
-    border: none;
-    cursor: pointer;
-    margin: 5px;
 }
 
-/* Button Variants */
 .btn-upload {
-    background-color: #B9FBC0 !important ;
-    color: black;
+    background-color: #28a745 !important;
+    color: white;
+    border: none;
 }
 
 .btn-edit {
-    background-color: #B9FBC0 !important ;
-    color: black;
+    background-color: #0d6efd !important;
+    color: white;
+    border: none;
 }
 
 .btn-users {
-    background-color: #B9FBC0 !important;
-    color: black;
+    background-color: #ff9800 !important ;
+    color: white;
+    border: none;
 }
 
 .btn-logout {
-    background-color: #ed2a2e !important;
-    color: black;
+    background-color: #dc3545 !important;
+    color: white;
+    border: none;
 }
 
-/* Hover Effects */
-.btn-upload:hover {
-    background-color: #8EECF5  !important;
+.button-sidebar a:hover, .button-sidebar button:hover {
+    opacity: 0.8;
 }
 
-.btn-edit:hover {
-    background-color: #8EECF5  !important;
-}
-
-.btn-users:hover {
-    background-color: #8EECF5 !important ;
-}
-
-.btn-logout:hover {
-    background-color: #B9FBC0 !important;
+.content-area {
+    flex-grow: 1; /* Allow content area to grow and fill available space */
+    margin-left: 20px; /* Adds some space between the sidebar and content */
 }

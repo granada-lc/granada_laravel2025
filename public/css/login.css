@@ -1,53 +1,114 @@
-body {
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* Body Background */
+body, html {
+    height: 100%;
+    font-family: 'Arial', sans-serif;
     background-color: #FBF8CC !important;
-    font-family: Arial, sans-serif;
 }
 
-.card {
-    width: 450px;
-    height: 350px !important; /* ← adjust this value as needed */
-    border-radius: 10px;
-    background-color: #B9FBC0 !important;
+/* Login Card Container */
+/* Login Card Container */
+.login-card {
+    background-color: #FDE4CF !important;
+    border-radius: 25px;
+    width: 100%;
+    max-width: 600px; /* Increased from 500px */
+    padding: 60px 50px; /* Increased vertical and horizontal padding */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
 }
 
 
-h2 {
+/* Input Group */
+.input-group {
+    margin-bottom: 20px;
+}
+
+/* Input Fields */
+.input-rounded {
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    padding: 14px 20px;
+    font-size: 1rem;
+    background-color: #ffffff !important;
+    border: 1px solid #ddd;
+    height: 50px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.input-rounded:focus {
+    border-color: #FFCFD2 !important;
+    box-shadow: 0 0 8px #FFCFD2 !important;
+    outline: none;
+}
+
+/* Input Group Icon */
+.input-group-text {
+    border: 1px solid #ddd;
+    background-color: #ffffff !important;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    font-size: 1.2rem;
+    color: #555;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    padding: 0 18px;
+}
+
+/* Pink Button */
+.btn-pink {
+    background-color: #f28482 !important;
+    color: white;
+    border-radius: 30px;
+    padding: 15px;
+    font-size: 1.1rem;
     font-weight: bold;
-    color: #181d1f !important;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 100%;
 }
 
-.form-control {
-    border-radius: 8px;
-    border: 1px solid #B9FBC0  !important;
-    background-color: #FDE4CF  ;
+.btn-pink:hover {
+    background-color: #f1c0e8 !important;
     color: black;
 }
 
-.form-control:focus {
-    border-color: #FFCFD2  ;
-    box-shadow: 0 0 5px #FFCFD2  ;
-}
-
-.btn-login {
-    font-size: 16px;
-    font-weight: bold;
-    border-radius: 8px;
-    padding: 12px;
-    background-color: #a3c4f3 !important;
-    color: black;
-    transition: all 0.3s ease-in-out;
-}
-
-.btn-login:hover {
-    background-color: #cfbaf0 !important;
-}
-
-.register-link {
-    color: #26292e;
+/* Links */
+a {
     text-decoration: none;
-    font-weight: bold;
 }
 
-.register-link:hover {
-    color: #cfbaf0  !important;
+a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Tweak */
+@media (max-width: 576px) {
+    .login-card {
+        padding: 40px 30px; /* Slightly more spacious */
+    }
+    
+    .input-rounded {
+        font-size: 1rem;
+        padding: 14px 18px;
+        height: 48px;
+    }
+
+    .input-group-text {
+        font-size: 1.1rem;
+        padding: 0 14px;
+        height: 48px;
+    }
+
+    .btn-pink {
+        padding: 13px;
+    }
 }
