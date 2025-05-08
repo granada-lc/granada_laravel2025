@@ -11,23 +11,24 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('uploads', function (Blueprint $table) {
+        Schema::create('uploads' , function(Blueprint $table){
             $table->id();
             $table->string('original_filename');
             $table->string('filename');
             $table->string('type');
-            $table->unsignedBigInteger('uploaded_by');
+            $table->uuid('uploaded_by');
             $table->timestamps();
-    
-            $table->foreign('uploaded_by')->references('id')->on('users')->onDelete('cascade');
+
+            $table->foreign('uploaded_by')->references('id')->on('usersinfo');
         });
     }
 
     /**
      * Reverse the migrations.
      */
-    public function down()
+    public function down(): void
     {
+        //
         Schema::dropIfExists('uploads');
     }
 };

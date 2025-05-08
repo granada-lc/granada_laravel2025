@@ -1,10 +1,15 @@
 <?php
 
 use App\Http\Controllers\RegistrationController;
+use App\Http\Controllers\EmailVerificationController;
+use App\Http\Controllers\ForgotPasswordController;
+use App\Http\Controllers\ResetPasswordController;
+use App\Http\Controllers\Controller;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PasswordController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\UploadController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request; 
 
@@ -57,3 +62,30 @@ Route::post('/edit-password', [PasswordController::class, 'update'])->name('pass
 
 //Controller route for display user
 Route::get('/users', [UserController::class, 'index'])->name('user.list');
+
+Route::delete('/users/{id}', [UserController::class, 'destroy'])->name('user.destroy');
+
+//Controller for upload view and uploading
+Route::middleware([])->group(function () {
+    Route::get('/upload', [UploadController::class, 'create'])->name('upload.create');
+    Route::post('/upload', [UploadController::class, 'store'])->name('upload.store');
+    Route::get('/my-uploads', [UploadController::class, 'index'])->name('upload.index');
+    Route::get('/download/{upload}', [UploadController::class, 'download'])->name('upload.download');
+    Route::delete('/upload/{upload}', [UploadController::class, 'destroy'])->name('upload.destroy');
+});
+
+
+Route::get('/verify-email/{token}', [AuthController::class, 'verifyEmail'])->name('verify.email');
+
+// View to enter email for verification// verification for email
+Route::get('/verify-email', [EmailVerificationController::class, 'showVerificationForm'])->name('verify.email.form');
+Route::post('/verify-email', [EmailVerificationController::class, 'sendVerificationEmail'])->name('verify.email.send');
+Route::get('/verify-email-token/{token}', [EmailVerificationController::class, 'verifyToken'])->name('verify.email.token');
+
+
+
+Route::get('/forgot-password', [ForgotPasswordController::class, 'showRequestForm'])->name('password.request');
+Route::post('/forgot-password', [ForgotPasswordController::class, 'sendResetLink'])->name('password.email');
+
+Route::get('/reset-password/{token}', [ResetPasswordController::class, 'showResetForm'])->name('password.reset');
+Route::post('/reset-password', [ResetPasswordController::class, 'reset'])->name('password.change');

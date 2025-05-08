@@ -6,10 +6,12 @@
     <title>Edit Password</title>
     <link rel="stylesheet" href="{{ asset('css/edit-password.css') }}">
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
 </head>
 <body>
-
-
+    
+<!-- Include Navbar -->
+@include('nav-bar')
 
 @if (session('success') || $errors->any())
 <div class="toast-container position-fixed top-0 end-0 p-3" style="z-index: 9999">
@@ -33,9 +35,9 @@
 @endif
 
 <br>
-<div class="container">
-<a href="{{ route('dashboard') }}"> Go Back</a> 
 
+<!-- Main Content -->
+<div class="medium-container">
     <h2>Change Password</h2>
 
     <form action="{{ route('password.update') }}" method="POST">
@@ -52,13 +54,12 @@
             <label>Confirm New Password</label>
             <input type="password" name="confirm_password" class="form-control" required>
         </div>
-        <button type="submit" class="btn btn-primary">Update Password</button>
 
-    
-
+        <div class="text-center">
+           <button type="submit" class="btn btn-primary">Update Password</button>
+        </div>
     </form>
 </div>
-
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script>
@@ -70,7 +71,6 @@
         }
     });
 </script>
+
 </body>
-
-
 </html>

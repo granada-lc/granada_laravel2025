@@ -15,6 +15,12 @@
     <div class="login-card p-4 shadow">
         
     <h2 class="text-center fw-bold mb-4" style="color: #f28482;">LOGIN</h2>
+    
+    @if (session('success'))
+            <div class="alert alert-success text-center">
+                {{ session('success') }}
+            </div>
+        @endif
 
         {{-- Error Message --}}
         @if(session('error'))
@@ -31,11 +37,14 @@
             </div>
 
             <div class="input-group mb-2">
-                <span class="input-group-text bg-white"><i class="fa fa-lock"></i></span>
-                <input type="password" name="password" class="form-control input-rounded" placeholder="Password" required>
-               
-            </div>
+               <span class="input-group-text bg-white"><i class="fa fa-lock"></i></span>
+               <input type="password" name="password" class="form-control input-rounded" placeholder="Password" required>
+           </div>
 
+           <div class="mb-3 text-end">
+              <a href="{{ route('password.request') }}" class="text-decoration-none">Forgot Password?</a>
+              <a href="{{ route('verify.email.form') }}" class="mx-3">Verify Your Email</a>
+            </div>
 
             <button type="submit" class="btn btn-pink w-100 fw-bold">LOGIN</button>
         </form>
@@ -45,6 +54,18 @@
         </div>
     </div>
 </div>
+
+@if($errors->any())
+            <div class="mt-3">
+                @if ($errors->has('email'))
+                    <div class="alert alert-warning text-center">
+                        {{ $errors->first('email') }}
+                    </div>
+                @else
+                    <div class="alert alert-warning text-danger text-center">{{ $errors->first() }}</div>
+                @endif
+            </div>
+        @endif
 
 </body>
 </html>

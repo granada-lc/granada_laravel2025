@@ -41,7 +41,7 @@ h2 {
 }
 
 .table thead {
-    background-color: #0d6efd;
+    background-color: #f28482;
     color: white;
     font-weight: bold;
 }
@@ -70,7 +70,7 @@ h2 {
     font-weight: 500;
     padding: 12px;
     border-radius: 8px;
-    background-color: #28a745;
+    background-color: #f28482;
     color: white;
     border: none;
     text-align: center;
@@ -78,6 +78,6 @@ h2 {
 }
 
 .btn-success:hover {
-    background-color: #218838;
+    background-color: #f28482;
     transition: background-color 0.3s ease;
 }

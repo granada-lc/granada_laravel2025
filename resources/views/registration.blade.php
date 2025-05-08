@@ -15,42 +15,69 @@
         <!-- Laravel Form -->
         <form method="POST" action="{{ route('registration.save') }}">
            @csrf
+        
 
             <div class="mb-3">
-                <input type="text" name="first_name" class="form-control" required placeholder="First Name">
+                <input type="text" name="firstname" class="form-control @error('firstname') is-invalid @enderror" placeholder="First Name" value="{{ old('firstname') }}">
+                @error('firstname')
+                    <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
             </div>
+
             <div class="mb-3">
-                <input type="text" name="last_name" class="form-control" required placeholder="Last Name">
+                <input type="text" name="lastname" class="form-control @error('lastname') is-invalid @enderror" placeholder="Last Name" value="{{ old('lastname') }}">
+                @error('lastname')
+                    <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
             </div>
+
             <div class="mb-3">
-                <select name="sex" class="form-control" required>
+                <select name="sex" class="form-control @error('sex') is-invalid @enderror">
                     <option value="" disabled selected>Sex</option>
-                    <option value="male">Male</option>
-                    <option value="female">Female</option>
+                    <option value="Male" {{ old('sex') == 'Male' ? 'selected' : '' }}>Male</option>
+                    <option value="Female" {{ old('sex') == 'Female' ? 'selected' : '' }}>Female</option>
                 </select>
+                @error('sex')
+                    <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
             </div>
 
             <div class="mb-3">
-                <input type="date" name="birthday" class="form-control" required>
+                <input type="date" name="birthday" class="form-control @error('birthday') is-invalid @enderror" value="{{ old('birthday') }}">
+                @error('birthday')
+                    <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
             </div>
 
             <div class="mb-3">
-                <input type="text" name="username" class="form-control" required placeholder="Username">
+                <input type="text" name="username" class="form-control @error('username') is-invalid @enderror" placeholder="Username" value="{{ old('username') }}">
+                @error('username')
+                    <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
             </div>
 
             <div class="mb-3">
-                <input type="email" name="email" class="form-control" required placeholder="Email">
+                <input type="email" name="email" class="form-control @error('email') is-invalid @enderror" placeholder="Email" value="{{ old('email') }}">
+                @error('email')
+                    <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
             </div>
 
             <div class="mb-3">
-                <input type="password" name="password" class="form-control" required placeholder="Password">
+                <input type="password" name="password" class="form-control @error('password') is-invalid @enderror" placeholder="Password">
+                @error('password')
+                    <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
             </div>
 
             <div class="form-check mb-3">
-                <input type="checkbox" name="agree" class="form-check-input" id="terms" required>
+                <input type="checkbox" name="agree" class="form-check-input @error('agree') is-invalid @enderror" id="terms">
                 <label class="form-check-label" for="terms">
                    Do you agree with our <a href="#">Privacy Policy</a> and <a href="#">Terms and Conditions?</a>
                 </label>
+                @error('agree')
+                    <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
             </div>
 
             <button type="submit" class="btn w-100">Register</button>
