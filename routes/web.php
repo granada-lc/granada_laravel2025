@@ -11,6 +11,7 @@ use App\Http\Controllers\PasswordController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UploadController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ReportController;
 use Illuminate\Http\Request; 
 
 Route::get('/', function () {
@@ -89,3 +90,13 @@ Route::post('/forgot-password', [ForgotPasswordController::class, 'sendResetLink
 
 Route::get('/reset-password/{token}', [ResetPasswordController::class, 'showResetForm'])->name('password.reset');
 Route::post('/reset-password', [ResetPasswordController::class, 'reset'])->name('password.change');
+
+//export route
+
+
+Route::get('/users/export', [UserController::class, 'export'])->name('user.export');
+
+//report route
+
+
+Route::get('/admin/reports', [ReportController::class, 'index'])->name('admin.reports');

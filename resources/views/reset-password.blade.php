@@ -4,49 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Reset Password</title>
-    <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
-    <style>
-        body {
-            background: linear-gradient(135deg, #008080, #1E90FF);
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        .reset-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
-            width: 100%;
-            max-width: 450px;
-        }
-
-        .strength-weak {
-            color: #dc3545; /* red */
-        }
-
-        .strength-medium {
-            color: #ffc107; /* yellow */
-        }
-
-        .strength-strong {
-            color: #28a745; /* green */
-        }
-
-        .btn-primary {
-            background-color: #1E90FF;
-            border-color: #1E90FF;
-        }
-
-        .btn-primary:hover {
-            background-color: #1c86ee;
-            border-color: #1c86ee;
-        }
-    </style>
-
+    <link rel="stylesheet" href="{{ asset('css/reset-password.css') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    
 </head>
 
 <body>

@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User List</title>
     <link rel="stylesheet" href="{{ asset('css/user-list.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
 </head>
 
@@ -38,12 +37,21 @@
                             <input type="text" id="searchEmail" name="email" placeholder="e.g. john@example.com"
                                 value="{{ request('email') }}" class="form-control">
                         </div>
-                        <div class="col-md-4 d-flex gap-2">
+                        <div class="col-md-4 d-flex flex-wrap gap-2">
                             <button type="submit" class="btn btn-primary">Filter</button>
                             @if(request('name') || request('email'))
                                 <a href="{{ route('user.list') }}" class="btn btn-outline-secondary">Clear Filters</a>
                             @endif
+                            <div class="col-md-4">
+                                <a href="{{ route('user.export', request()->query()) }}"
+                                    class="btn btn-success">Download
+                                    CSV</a>
+                            </div>
+
                         </div>
+
+
+
                     </div>
                 </form>
             </div>

@@ -3,44 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>Registration Success</title>
-    <link rel="stylesheet" href="{{ asset('css/registration_success.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
 </head>
 <body>
-    <div class="container mt-5">
-        <div class="center-content">
-            <h2 class="text-center">Registration Successful!</h2>
-            @php
-                $data = session('data');
-            @endphp
 
-            <table class="table table-bordered table-striped mt-4 text-center">
-                <thead class="table-primary">
-                    <tr>
-                        <th>First Name</th>
-                        <th>Last Name</th>
-                        <th>Birthday</th>
-                        <th>Sex</th>
-                        <th>Email</th>
-                        <th>Username</th>
-                <!--    <th>Accepted Terms</th>  --> 
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>{{ $data['first_name'] ?? '' }}</td>
-                        <td>{{ $data['last_name'] ?? '' }}</td>
-                        <td>{{ $data['birthday'] ?? '' }}</td>
-                        <td>{{ $data['sex'] ?? '' }}</td>
-                        <td>{{ $data['email'] ?? '' }}</td>
-                        <td>{{ $data['username'] ?? '' }}</td>
-                    <!-- <td>{{ isset($data['agree']) ? 'Yes' : 'No' }}</td> --> 
-                    </tr>
-                </tbody>
-            </table>
-
-            <a href="{{ route('login') }}" class="btn btn-success mt-3 w-100"> Go to Login</a>
-        </div>
+<div class="container mt-5">
+    <div class="alert alert-success text-center">
+        <h4 class="mb-3">Registration Successful!</h4>
+        <p><strong>Username:</strong> {{ $user->username }}</p>
+        <p><strong>Full Name:</strong> {{ $user->first_name }} {{ $user->last_name }}</p>
+        <p>Please check your email to verify your account before logging in.</p>
+        <a href="{{ route('login') }}" class="btn btn-primary mt-3">Go to Login</a>
     </div>
+</div>
+
 </body>
 </html>
