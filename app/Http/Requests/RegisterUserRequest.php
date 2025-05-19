@@ -29,6 +29,7 @@ class RegisterUserRequest extends FormRequest
             'email' => 'required|email|unique:usersinfo,email',
             'username' => 'required|string|unique:usersinfo,username',
             'password' => 'required|string|min:8',
+            'confirm-password' => 'required|string|same:password',
             'agree' => 'accepted',
         ];
     }
@@ -38,6 +39,7 @@ class RegisterUserRequest extends FormRequest
         return [
             'firstname.regex' => 'The first name may only contain letters, spaces, hyphens, and apostrophes.',
             'lastname.regex' => 'The last name may only contain letters, spaces, hyphens, and apostrophes.',
+            'confirm-password.same' => 'The confirmation password must match the password.',
         ];
     }
 

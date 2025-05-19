@@ -94,7 +94,7 @@
 
 
         <div class="d-flex justify-content-center mt-4">
-            {{ $users->onEachSide(1)->links('pagination::bootstrap-5') }}
+            {{ $users->onEachSide(1)->links('pagination::bootstrap-4') }}
         </div>
 
 </body>
