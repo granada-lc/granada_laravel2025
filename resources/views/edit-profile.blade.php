@@ -36,6 +36,8 @@
         </div>
     @endif
 
+    <!-- HTML template for the Edit Profile page, including form fields for updating user information
+  and displaying success/error messages using Bootstrap toast notifications. -->
 
     <div class="main-content">
 
@@ -56,7 +58,7 @@
                 <div class="mb-3">
                     <label for="last_name" class="form-label">Last Name:</label>
                     <input type="text" class="form-control @error('last_name') is-invalid @enderror" id="last_name"
-                        name="last_name" value="{{ old('last_name', session('user')->last_name) }}" >
+                        name="last_name" value="{{ old('last_name', session('user')->last_name) }}">
                     @error('last_name')
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror

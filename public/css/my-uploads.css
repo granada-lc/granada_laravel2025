@@ -2,9 +2,10 @@
 body, html {
     margin: 0;
     padding: 0;
-    background-color:#FBF8CC !important;
+    background-color: #FBF8CC !important;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
 /* Navigation Bar */
 .navbar {
     background-color: #f28482 !important;
@@ -14,21 +15,24 @@ body, html {
     font-weight: bold;
     color: #fff;
 }
+
 .navbar .nav-link {
     color: #fff !important;
     margin-right: 15px;
     font-weight: 500;
 }
+
 .navbar .nav-link:hover {
     text-decoration: underline;
 }
 
 /* Container Adjustments */
 .container {
-    background-color:#FFCFD2 !important;
+    background-color: #FFCFD2 !important;
     border-radius: 12px;
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
     padding: 30px;
+    margin: 20px 0; /* Add vertical spacing */
 }
 
 /* Page Title */
@@ -49,16 +53,18 @@ h2 {
 
 /* Filter Card */
 .filter-card {
-    background-color:  #CFBAF0;
+    background-color: #CFBAF0;
     padding: 20px;
     border-radius: 10px;
     box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.05);
+    margin-bottom: 20px; /* Add space below the filter card */
 }
 
 /* Table Styling */
 .table {
     border-radius: 8px;
     overflow: hidden;
+    margin: 20px 0; /* Add vertical spacing around the table */
 }
 
 .table thead {
@@ -73,6 +79,7 @@ h2 {
 .table td, .table th {
     vertical-align: middle;
     text-align: center;
+    padding: 15px; /* Add padding to table cells for better spacing */
 }
 
 /* Action Buttons */

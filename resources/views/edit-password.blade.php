@@ -15,7 +15,7 @@
     <!-- Include Navbar -->
     @include('nav-bar')
 
-    @if (session('success') || $errors->any())
+    @if (session('success') || $errors->any()) // Check for error messages.
         <div class="toast-container position-fixed top-0 end-0 p-3" style="z-index: 9999">
             <div id="feedbackToast"
                 class="toast align-items-center text-white {{ session('success') ? 'bg-success' : 'bg-danger' }} border-0"
@@ -23,10 +23,10 @@
                 <div class="d-flex">
                     <div class="toast-body">
                         @if(session('success'))
-                            {{ session('success') }}
+                            {{ session('success') }} // Success message.
                         @else
                             <ul class="mb-0">
-                                @foreach ($errors->all() as $error)
+                                @foreach ($errors->all() as $error) // Loop through errors.
                                     <li>{{ $error }}</li>
                                 @endforeach
                             </ul>
@@ -46,7 +46,12 @@
         <h2>Change Password</h2>
 
         <form action="{{ route('password.update') }}" method="POST">
-            @csrf
+            <!-- Form for password update with CSRF protection. -->
+            @csrf <!-- Generates CSRF token for security. -->
+
+            <!-- Form fields for updating the user's password, including old password, new password, and confirmation, with validation 
+             and feedback for errors. -->
+
             <div class="mb-3">
                 <label>Old Password</label>
                 <input type="password" name="old_password"

@@ -9,35 +9,35 @@
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
 </head>
 
-<body>
+<body> 
 
-    <div class="container mt-5">
-        <a class="btn btn-secondary" href="{{ route('login') }}">Go back</a>
-        <br><br>
+    <div class="container mt-5"> <!-- Main container. -->
+        <a class="btn btn-secondary" href="{{ route('login') }}">Go back</a> <!-- Back to login. -->
+        <br><br> <!-- Spacing. -->
 
-        <h3 class="mb-4">Verify Your Email</h3>
+        <h3 class="mb-4">Verify Your Email</h3> <!-- Verification title. -->
 
-        @if (session('success'))
-            <div class="alert alert-success">{{ session('success') }}</div>
+        @if (session('success')) <!-- Check success session. -->
+            <div class="alert alert-success">{{ session('success') }}</div> <!-- Success message alert. -->
         @endif
 
-        @if ($errors->any())
-            <div class="alert alert-danger">{{ $errors->first() }}</div>
+        @if ($errors->any()) <!-- Check for errors. -->
+            <div class="alert alert-danger">{{ $errors->first() }}</div> <!-- Display first error. -->
         @endif
 
-        <form action="{{ route('verify.email.send') }}" method="POST">
-            @csrf
-            <div class="mb-3">
-                <label>Email Address</label>
+        <form action="{{ route('verify.email.send') }}" method="POST"> <!-- Verification form. -->
+            @csrf <!-- CSRF token. -->
+            <div class="mb-3"> <!-- Margin bottom. -->
+                <label>Email Address</label> <!-- Email label. -->
                 <input type="email" name="email" class="form-control @error('email') is-invalid @enderror"
-                    value="{{ old('email') }}">
-                @error('email')
-                    <div class="invalid-feedback">{{ $message }}</div>
+                    value="{{ old('email') }}"> <!-- Email input. -->
+                @error('email') <!-- Check email error. -->
+                    <div class="invalid-feedback">{{ $message }}</div> <!-- Display error message. -->
                 @enderror
             </div>
-            <button class="btn btn-primary">Send Verification Email</button>
+            <button class="btn btn-primary">Send Verification Email</button> <!-- Send button. -->
         </form>
     </div>
-</body>
+</body> 
 
 </html>

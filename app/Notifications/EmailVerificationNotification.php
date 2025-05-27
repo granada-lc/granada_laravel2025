@@ -34,11 +34,11 @@ class EmailVerificationNotification extends Notification
     /**
      * Get the mail representation of the notification.
      */
-    public function toMail(object $notifiable): MailMessage
+    public function toMail(object $notifiable): MailMessage  // Creates a mail message for email verification.
     {
-        $url = route('verify.email.token', ['token' => $this->token]);
+        $url = route('verify.email.token', ['token' => $this->token]);  // Generates the verification URL using the token.
 
-        return (new MailMessage)
+        return (new MailMessage)  // Instantiates a new MailMessage object.
             ->subject('Verify Your Email Address')
             ->greeting('Hi ' . $notifiable->username . ',')
             ->line('Click the button below to verify your email address.')

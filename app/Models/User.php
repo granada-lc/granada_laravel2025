@@ -17,7 +17,7 @@ class User extends Authenticatable
      *
      * @var list<string>
      */
-    protected $fillable = [
+    protected $fillable = [  // Defines which attributes can be mass assigned.
         'name',
         'email',
         'password',
@@ -28,7 +28,7 @@ class User extends Authenticatable
      *
      * @var list<string>
      */
-    protected $hidden = [
+    protected $hidden = [   // Specifies attributes to be excluded from model serialization.
         'password',
         'remember_token',
     ];
@@ -41,8 +41,8 @@ class User extends Authenticatable
     protected function casts(): array
     {
         return [
-            'email_verified_at' => 'datetime',
-            'password' => 'hashed',
+            'email_verified_at' => 'datetime',  // Casts email verification timestamp to a datetime object.
+            'password' => 'hashed',   // Ensures the password is treated as hashed for security.
         ];
     }
 }

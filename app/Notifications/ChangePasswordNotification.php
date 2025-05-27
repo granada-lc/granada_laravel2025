@@ -32,10 +32,10 @@ class ChangePasswordNotification extends Notification
     /**
      * Get the mail representation of the notification.
      */
-    public function toMail(object $notifiable): MailMessage
+    public function toMail(object $notifiable): MailMessage    // Builds the mail message for the notification.
     {
-        $timestamp = date('F j, Y g:i A');
-        return (new MailMessage)
+        $timestamp = date('F j, Y g:i A');   // Gets the current date and time for the message.
+        return (new MailMessage)    // Creates a new MailMessage instance.
         ->subject('Your Password Has Been Changed')
         ->greeting('Hello!')
         ->line('This is a confirmation that your password has been successfully changed.')

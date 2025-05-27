@@ -4,10 +4,15 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
-{
+return new class extends Migration {
     /**
      * Run the migrations.
+     */
+
+    /**
+     * Migration to add email verification fields to the 'usersinfo' table, 
+     * including a timestamp for email verification and a token for 
+     * verification purposes, with the ability to reverse the changes.
      */
     public function up(): void
     {

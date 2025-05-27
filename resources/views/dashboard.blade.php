@@ -13,9 +13,11 @@
     
 @include('nav-bar') <!-- Top nav bar like in the image -->
 
-<div class="d-flex p-4">
+<div class="d-flex p-4">  
     <div class="content-area">
         <div class="card p-4 shadow-lg">
+
+             <!-- Greeting with user's first name or default 'User'. -->
             <h2 class="text-center text-primary">Welcome, {{ session('user')->first_name ?? 'User' }}!</h2>
             <h3>🏷️ Dashboard</h3>
             <p>This is your main dashboard where you can manage your profile, upload files, and access other features.</p>
